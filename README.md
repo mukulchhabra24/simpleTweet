@@ -34,9 +34,20 @@ The following **additional** features are implemented:
 Here's a walkthrough of implemented user stories:
 
 Twitter Oauth
+
+
 <img src='https://media.giphy.com/media/fdlihf73fS3oCtCIpm/giphy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 <img src='https://media.giphy.com/media/0aGhUmqShM6uijzvw7/giphy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+
+Recycler View with all tweets
+
+<img src='https://media.giphy.com/media/Tetk6IBds2TyNGF6RL/giphy.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+
+Pull down to refresh
+
+<img src='https://media.giphy.com/media/ufN6EYOjzRqwvnVAkb/giphy.gif' width='' alt='Video Walkthrough' />
 
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
