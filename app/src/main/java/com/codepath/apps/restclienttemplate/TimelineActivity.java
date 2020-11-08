@@ -25,14 +25,17 @@ public class TimelineActivity extends AppCompatActivity {
     RecyclerView rvTweets;
     List<Tweet> tweets;
     TweetsAdapter adapter;
-  //  SwipeRefreshLayout swipeContainer;
+    SwipeRefreshLayout swipeContainer;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timeline);
-       /* swipeContainer= findViewById(R.id.swipeContainer);
+
+        client = TwitterApp.getRestClient(this);
+
+        swipeContainer= findViewById(R.id.swipeContainer);
         swipeContainer.setColorSchemeResources(android.R.color.holo_blue_bright,
                 android.R.color.holo_green_light,
                 android.R.color.holo_orange_light,
@@ -44,9 +47,9 @@ public class TimelineActivity extends AppCompatActivity {
                 populateHomeTimeline();
 
             }
-        });*/
+        });
 
-        client = TwitterApp.getRestClient(this);
+
         rvTweets= findViewById(R.id.rvTweets);
         tweets= new ArrayList<>();
         adapter= new TweetsAdapter(this, tweets);
@@ -63,11 +66,11 @@ public class TimelineActivity extends AppCompatActivity {
             public void onSuccess(int statusCode, Headers headers, JSON json) {
                 JSONArray jsonArray = json.jsonArray;
                 try {
-                   // adapter.clear();
+                   adapter.clear();
                     Log.i(TAG,"fetching clear");
                     adapter.addAll(Tweet.fromJsonArray(jsonArray));
                     Log.i(TAG,"list added");
-                   // swipeContainer.setRefreshing(false);
+                    swipeContainer.setRefreshing(false);
                 } catch (JSONException e) {
                     Log.i(TAG,"fetching failed");
                     e.printStackTrace();
